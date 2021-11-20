@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/menu_background_gradient"
     tools:context=".GameActivity">
 
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="wrap_content"
-        android:layout_height="106dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,115 +18,130 @@
         app:layout_constraintVertical_bias="0.825">
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/button_0"
-                android:layout_width="41dp"
-                android:layout_height="38dp"
-                android:text="  " />
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="cl"
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/button_1"
-                android:layout_width="39dp"
-                android:layout_height="45dp"
-                android:text="1" />
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="1"
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/button_2"
-                android:layout_width="39dp"
-                android:layout_height="40dp"
-                android:text="2" />
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="2"
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/button_3"
-                android:layout_width="40dp"
-                android:layout_height="41dp"
-                android:text="3" />
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="3"
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/button_4"
-                android:layout_width="43dp"
-                android:layout_height="44dp"
-                android:text="4" />
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="4"
+                android:textSize="20dp" />
 
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/button_5"
-                android:layout_width="38dp"
-                android:layout_height="43dp"
-                android:text="5" />
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="5"
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/button_6"
-                android:layout_width="45dp"
-                android:layout_height="47dp"
-                android:text="6" />
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="6"
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/button_7"
-                android:layout_width="39dp"
-                android:layout_height="47dp"
-                android:text="7" />
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="7"
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/button_8"
-                android:layout_width="43dp"
-                android:layout_height="47dp"
-                android:text="8" />
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="8"
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/button_9"
-                android:layout_width="39dp"
-                android:layout_height="44dp"
-                android:text="9" />
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="9"
+                android:textSize="20dp" />
         </TableRow>
 
     </TableLayout>
 
     <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:backgroundTint="#00FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.264"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintVertical_bias="0.264">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="500dp">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp">
 
             <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="120dp"
+                android:layout_height="120dp">
 
                 <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_width="120dp"
+                    android:layout_height="40dp">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_0"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_1"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_2"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
                 </TableRow>
 
@@ -133,22 +149,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_3"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_4"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_5"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
                 </TableRow>
 
@@ -156,22 +175,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_6"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_7"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_8"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
                 </TableRow>
 
@@ -179,74 +201,85 @@
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="2dp">
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="40dp">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_9"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
-                        android:text="Button" />
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_10"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
-                        android:text="Button" />
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form" />
+                    android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_11"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:text="Button" />
+                        android:background="@drawable/button_board_form" />
+                    android:text="Button" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_12"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_13"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_14"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@color/black">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_15"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_16"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_17"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
                 </TableRow>
 
@@ -260,22 +293,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_18"
-                        android:layout_width="48dp"
-                        android:layout_height="39dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_19"
                         android:layout_width="40dp"
-                        android:layout_height="42dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_20"
-                        android:layout_width="35dp"
-                        android:layout_height="39dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
                 </TableRow>
 
@@ -283,22 +319,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_21"
-                        android:layout_width="34dp"
-                        android:layout_height="34dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_22"
-                        android:layout_width="45dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_23"
-                        android:layout_width="45dp"
-                        android:layout_height="38dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
                 </TableRow>
 
@@ -306,22 +345,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_24"
-                        android:layout_width="47dp"
-                        android:layout_height="44dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_25"
-                        android:layout_width="43dp"
-                        android:layout_height="39dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_26"
-                        android:layout_width="44dp"
-                        android:layout_height="39dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
                 </TableRow>
 
@@ -340,26 +382,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_27"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
-                        android:text="Button"
-                        tools:layout_editor_absoluteX="126dp"
-                        tools:layout_editor_absoluteY="689dp" />
-
-                    <Button
-                        android:id="@+id/button_board_28"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:text="Button"
-                        tools:layout_editor_absoluteX="257dp"
-                        tools:layout_editor_absoluteY="660dp" />
+                        android:background="@drawable/button_board_form"
+                        android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/button_board_28"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
+                        android:text="Button" />
+
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_29"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="37dp"
                         tools:layout_editor_absoluteY="652dp" />
@@ -370,26 +411,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_30"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="42dp"
                         tools:layout_editor_absoluteY="689dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_31"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="209dp"
                         tools:layout_editor_absoluteY="643dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_32"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="664dp" />
@@ -399,26 +443,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_33"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="42dp"
                         tools:layout_editor_absoluteY="689dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_34"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="209dp"
                         tools:layout_editor_absoluteY="643dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_35"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="664dp" />
@@ -428,28 +475,33 @@
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="2dp">
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_36"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_37"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_38"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
                 </TableRow>
 
@@ -457,22 +509,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_39"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
-                        android:text="Button" />
-
-                    <Button
-                        android:id="@+id/button_board_40"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/button_board_40"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
+                        android:text="Button" />
+
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_41"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
                 </TableRow>
 
@@ -480,22 +535,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_42"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_43"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_44"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
                 </TableRow>
 
@@ -509,22 +567,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_45"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_46"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_47"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
                 </TableRow>
 
@@ -532,22 +593,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_48"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_49"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_50"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
                 </TableRow>
 
@@ -555,22 +619,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_51"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
-                        android:text="Button" />
-
-                    <Button
-                        android:id="@+id/button_board_52"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
-                        android:text="Button" />
-
-                    <Button
-                        android:id="@+id/button_board_53"
-                        android:layout_width="35dp"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
+                        android:text="Button" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/button_board_52"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
+                        android:text="Button" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/button_board_53"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button" />
                 </TableRow>
 
@@ -579,7 +646,8 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp">
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -589,26 +657,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_54"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="42dp"
                         tools:layout_editor_absoluteY="689dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_55"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="209dp"
                         tools:layout_editor_absoluteY="643dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_56"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="664dp" />
@@ -618,26 +689,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_57"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="42dp"
                         tools:layout_editor_absoluteY="689dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_58"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="209dp"
                         tools:layout_editor_absoluteY="643dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_59"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="664dp" />
@@ -647,26 +721,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_60"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="42dp"
                         tools:layout_editor_absoluteY="689dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_61"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="209dp"
                         tools:layout_editor_absoluteY="643dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_62"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="664dp" />
@@ -676,32 +753,37 @@
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="2dp">
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_63"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="42dp"
                         tools:layout_editor_absoluteY="689dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_64"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="209dp"
                         tools:layout_editor_absoluteY="643dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_65"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="664dp" />
@@ -711,26 +793,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_66"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="42dp"
                         tools:layout_editor_absoluteY="689dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_67"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="209dp"
                         tools:layout_editor_absoluteY="643dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_68"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="664dp" />
@@ -740,26 +825,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_69"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="42dp"
                         tools:layout_editor_absoluteY="689dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_70"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="209dp"
                         tools:layout_editor_absoluteY="643dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_71"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="664dp" />
@@ -775,26 +863,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_72"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="42dp"
                         tools:layout_editor_absoluteY="689dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_73"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="209dp"
                         tools:layout_editor_absoluteY="643dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_74"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="664dp" />
@@ -804,26 +895,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_75"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="42dp"
                         tools:layout_editor_absoluteY="689dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_76"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="209dp"
                         tools:layout_editor_absoluteY="643dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_77"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="664dp" />
@@ -833,26 +927,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_78"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="42dp"
                         tools:layout_editor_absoluteY="689dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_79"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="209dp"
                         tools:layout_editor_absoluteY="643dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_board_80"
-                        android:layout_width="43dp"
-                        android:layout_height="37dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_board_form"
                         android:text="Button"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="664dp" />
@@ -862,5 +959,20 @@
         </TableRow>
 
     </TableLayout>
+
+    <TextView
+        android:id="@+id/game_textView_level_name"
+        android:transitionName="levelName"
+        android:layout_width="134dp"
+        android:layout_height="35dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

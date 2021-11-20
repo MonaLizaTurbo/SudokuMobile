@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Sudoku</string>
+
+    <string name="menu_main_start_button">Start game</string>
+    <string name="menu_main_settings_button">Settings</string>
+    <string name="item_level_selection_text_start">Start</string>
+    <string name="item_level_selection_text_continue">Continue</string>
+    <string name="item_level_selection_text_solved">Solved</string>
+    <string name="item_level_selection_text_difficulty_easy">Easy</string>
+    <string name="item_level_selection_text_difficulty_medium">Medium</string>
+    <string name="item_level_selection_text_difficulty_hard">Hard</string>
+    <string name="menu_settings_button_download">Download</string>
+    <string name="menu_settings_button_download_update">Update</string>
+    <string name="menu_settings_toast_successfully">Levels loaded. Hopefully they
+        have loaded successfully</string>
+    <string name="menu_end_game_text_info">Congratulations! You solve </string>
+    <string name="menu_end_game_text_in">in just</string>
+    <string name="menu_end_game_text_time">minutes</string>
+    <string name="item_level_selection_text_level">Level </string>
+
 </resources>
