@@ -25,13 +25,15 @@
                 android:id="@+id/button_0"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:text="cl"
+                android:text="c"
                 android:textSize="20dp" />
 
             <Button
                 android:id="@+id/button_1"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
                 android:text="1"
                 android:textSize="20dp" />
 
@@ -46,6 +48,8 @@
                 android:id="@+id/button_3"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
                 android:text="3"
                 android:textSize="20dp" />
 
@@ -73,6 +77,8 @@
                 android:id="@+id/button_6"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
                 android:text="6"
                 android:textSize="20dp" />
 
@@ -87,6 +93,8 @@
                 android:id="@+id/button_8"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
                 android:text="8"
                 android:textSize="20dp" />
 
@@ -962,12 +970,12 @@
 
     <TextView
         android:id="@+id/game_textView_level_name"
-        android:transitionName="levelName"
-        android:layout_width="134dp"
-        android:layout_height="35dp"
+        android:layout_width="194dp"
+        android:layout_height="38dp"
         android:text="TextView"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="28sp"
+        android:transitionName="levelName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

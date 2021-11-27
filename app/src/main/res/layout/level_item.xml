@@ -8,12 +8,12 @@
 
     <TextView
         android:id="@+id/item_textView_lvl_number"
-        android:transitionName="levelName"
-        android:layout_width="123dp"
-        android:layout_height="45dp"
+        android:layout_width="141dp"
+        android:layout_height="30dp"
         android:text="TextView"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textSize="24sp"
+        android:transitionName="levelName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
@@ -23,15 +23,15 @@
 
     <TextView
         android:id="@+id/item_textView_game_state"
-        android:layout_width="87dp"
-        android:layout_height="38dp"
+        android:layout_width="154dp"
+        android:layout_height="32dp"
         android:text="TextView"
+        android:textAlignment="viewEnd"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.844"
+        app:layout_constraintHorizontal_bias="0.839"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.509" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
