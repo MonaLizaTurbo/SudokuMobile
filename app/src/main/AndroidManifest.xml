@@ -12,7 +12,6 @@
         <activity
             android:name=".EndGameActivity"
             android:exported="false" />
-        <activity android:name=".SettingsActivity" />
         <activity android:name=".LevelSelectionActivity" />
         <activity android:name=".PreeferencesTestActivity" />
         <activity android:name=".GameActivity" />

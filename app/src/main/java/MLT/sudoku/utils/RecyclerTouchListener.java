@@ -1,4 +1,4 @@
-package MLT.sudoku;
+package MLT.sudoku.utils;
 
 import android.content.Context;
 import android.view.GestureDetector;

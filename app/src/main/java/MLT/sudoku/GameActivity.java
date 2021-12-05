@@ -5,16 +5,13 @@ import androidx.core.app.ActivityOptionsCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 import MLT.sudoku.dataBase.DatabaseHelper;
 import MLT.sudoku.dataBase.GameLevel;
@@ -27,6 +24,7 @@ public class GameActivity extends AppCompatActivity {
     Long timeStamp;
     TextView levelName;
 
+    //list of buttons which insert values into the grid
     public static final int[] INSERT_BUTTONS_IDS = {
             R.id.button_1,
             R.id.button_2,
@@ -39,6 +37,7 @@ public class GameActivity extends AppCompatActivity {
             R.id.button_9
     };
 
+    //list of grid buttons
     public static final int[] BUTTON_IDS = {
             R.id.button_board_0,
             R.id.button_board_1,
@@ -134,14 +133,18 @@ public class GameActivity extends AppCompatActivity {
     ArrayList<ArrayList<Button>> btnBoardList = new ArrayList<>();
     ArrayList<Button> btnInsertList = new ArrayList<>();
 
+    //array which stores level
     private String[][] gameboard = new String[9][9];
 
+    //array which stores solved level
     private String[][] solvedLevel = new String[9][9];
 
+    //array which stores level modified by player
     private String[][] playerBoard = new String[9][9];
 
+
+    //variable which stores number of selected grid square
     int choosenSquare = new Integer(0);
-    int isSqareWritable = new Integer(0);
     int choosenButton = new Integer(0);
 
     @Override
@@ -171,8 +174,8 @@ public class GameActivity extends AppCompatActivity {
 
         btn0 = findViewById(R.id.button_0);
 
+        // initialize of buttons
         int buttonIterator = 1;
-
         for (int id : INSERT_BUTTONS_IDS) {
 
             Button button = findViewById(id);
@@ -180,7 +183,6 @@ public class GameActivity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.d("test", String.valueOf(finalButtonIterator1));
                     insertValue(finalButtonIterator1);
                     if(checkIfSolvedCorrectly(playerBoard, solvedLevel))
                         endGame();
@@ -196,8 +198,6 @@ public class GameActivity extends AppCompatActivity {
         int column = 0;
         ArrayList<Button> helpButtonArrayList = new ArrayList<>();
         for (int id : BUTTON_IDS) {
-
-            Log.d("TEEEEST2 ", "row " + row + " column " + column);
             Button button = findViewById(id);
             button.setTextSize(1,25);
             button.setText(playerBoard[row][column]);
@@ -215,7 +215,6 @@ public class GameActivity extends AppCompatActivity {
                         eraseColor(choosenSquare);
                         choosenSquare = finalButtonIterator;
                         colorBoard(finalButtonIterator);
-                        Log.d("CHOOSEN", String.valueOf(choosenSquare));
                     }
                 });
             }
@@ -258,12 +257,12 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
+    //function that inserts value in to the grid
     private void insertValue(int value){
         String test = "";
         for (int row = 0; row < 9; row++) {
             for (int column = 0; column < 9; column++) {
                 if(gameboard[row][column].matches("")){
-
                     test+=" ";
                 }
                 else
@@ -271,13 +270,11 @@ public class GameActivity extends AppCompatActivity {
              }
             test+="\n";
             }
-        Log.d("",test);
 
         int placeIterator = 0;
         for (int row = 0; row < 9; row++) {
             for (int column = 0; column < 9; column++) {
                 if (choosenSquare == placeIterator && gameboard[row][column].matches("")) {
-                        Log.d("final", String.valueOf(value));
                         btnBoardList.get(row).get(column).setText(String.valueOf(value));
                         playerBoard[row][column] = String.valueOf(value);
                         row = 9;
@@ -289,13 +286,14 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
-    private void eraseColor(int choosenSquare) {
+    //change color of previously selected buttons to normal colour
+    private void eraseColor(int chosenSquare) {
         int tableIterator = 0;
         int row = 0;
         int column = 0;
         for(int rowIt = 0 ; rowIt < 9 ; rowIt++){
             for(int columnIt = 0 ; columnIt < 9 ; columnIt++){
-                if(tableIterator == choosenSquare){
+                if(tableIterator == chosenSquare){
                     row = rowIt;
                     column = columnIt;
                     columnIt = 9;
@@ -304,7 +302,6 @@ public class GameActivity extends AppCompatActivity {
                 tableIterator++;
             }
         }
-        Log.d("TEEEST", "Choosen " + choosenSquare + " ROW " + row + " COLUMN " + column);
 
         int rowStart = 0;
         int rowEnd;
@@ -351,7 +348,6 @@ public class GameActivity extends AppCompatActivity {
 
         columnEnd = columnStart + 2;
 
-        Log.d("TABLICA ", String.valueOf(btnBoardList.get(2).size()));
         for(int iterator = 0 ;  iterator < 9 ; iterator++){
             if(!gameboard[row][iterator].matches("")){
                 btnBoardList.get(row).get(iterator).setBackground(getResources().getDrawable(R.drawable.button_board_permanent_form));
@@ -381,6 +377,7 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
+    //change colour of selected button
     private void colorBoard(int finalButtonIterator) {
         int tableIterator = 0;
         int row = 0;
@@ -443,7 +440,6 @@ public class GameActivity extends AppCompatActivity {
         columnEnd = columnStart + 2;
 
         for(int iterator = 0 ;  iterator < 9 ; iterator++){
-            Log.d("ITERATOR ", String.valueOf(iterator));
             if(!gameboard[row][iterator].matches("")){
                 btnBoardList.get(row).get(iterator).setBackground(getResources().getDrawable(R.drawable.button_board_selected_row_permanent_form));
             }
@@ -475,30 +471,7 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
-    void changeButtonsColor(int btnNumber){
-        switch (btnNumber){
-            case 0:
-                btn0.setBackground(getResources().getDrawable(R.drawable.button_board_selected_row_form));
-                break;
-            default:
-                btnInsertList.get(btnNumber).setBackground(getResources().getDrawable(R.drawable.button_board_selected_row_form));
-                break;
-
-        }
-
-        switch (choosenButton){
-            case 0:
-                btn0.setBackground(getResources().getDrawable(R.drawable.button_board_form));
-                break;
-            default:
-                btnInsertList.get(btnNumber).setBackground(getResources().getDrawable(R.drawable.button_board_form));
-                break;
-
-        }
-
-        choosenButton = btnNumber;
-    }
-
+    //function that translate level from array to string
     private String writeFromArrayToString(String[][] gameLevel){
         String level = new String();
         for(int row = 0 ; row < 9 ; row++){
@@ -514,6 +487,7 @@ public class GameActivity extends AppCompatActivity {
         return level;
     }
 
+    //function that translate level from string to array
     private String[][] writeFromStringToArray(String level){
         String[][] levelArray = new String[9][9];
         int levelIterator = 0;
@@ -534,12 +508,12 @@ public class GameActivity extends AppCompatActivity {
         return levelArray;
     }
 
+    //function that checks if user solved level correctly
     boolean checkIfSolvedCorrectly (String[][] playerSolution, String[][] solution){
         Boolean correctFlag = true;
         for(int row = 0 ; row < 9 && correctFlag ; row++){
             for(int column = 0 ; column < 9 && correctFlag ; column++){
                 if(!playerSolution[row][column].matches(solution[row][column])){
-                    Log.d("BLAD", playerSolution[row][column] + " " + solution[row][column]);
                     correctFlag = false;
                 }
             }
@@ -547,6 +521,7 @@ public class GameActivity extends AppCompatActivity {
         return correctFlag;
     }
 
+    //function which ends game after user solved level
     void endGame(){
         DecimalFormat df = new DecimalFormat("###");
         String playTimeMin = df.format((gameLevel.getPlaying_time() + (Instant.now().getEpochSecond() - timeStamp))/60);
@@ -564,7 +539,7 @@ public class GameActivity extends AppCompatActivity {
         startActivity(intent, optionsCompat.toBundle());
     }
 
-
+    //function which saves player progress if activity is stopped
     void savePlayerLevel(){
         Integer timeDifference = Integer.valueOf(String.valueOf(Instant.now().getEpochSecond() - timeStamp));
         DatabaseHelper db = new DatabaseHelper(this);

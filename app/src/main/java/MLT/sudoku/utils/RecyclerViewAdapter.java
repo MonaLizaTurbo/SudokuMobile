@@ -1,4 +1,4 @@
-package MLT.sudoku;
+package MLT.sudoku.utils;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import MLT.sudoku.R;
 import MLT.sudoku.dataBase.GameLevel;
 
 public class RecyclerViewAdapter  extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {

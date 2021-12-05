@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,18 +18,19 @@ import java.util.List;
 
 import MLT.sudoku.dataBase.DatabaseHelper;
 import MLT.sudoku.dataBase.GameLevel;
+import MLT.sudoku.utils.RecyclerTouchListener;
+import MLT.sudoku.utils.RecyclerViewAdapter;
 
 public class LevelSelectionActivity extends AppCompatActivity {
 
     private RecyclerViewAdapter recyclerViewAdapter;
     private List<GameLevel> gameList = new ArrayList<>();
-//    private CoordinatorLayout coordinatorLayout;
     private RecyclerView recyclerView;
     private Button btnEasy;
     private Button btnMedium;
     private Button btnHard;
 
-    private int btnState = 1;
+    private int btnState = 2;
     private DatabaseHelper db;
 
 
@@ -39,7 +39,6 @@ public class LevelSelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_selection);
         getSupportActionBar().hide();
-//        coordinatorLayout = findViewById(R.id.coo)
         recyclerView = findViewById(R.id.recycler_view);
         btnEasy = findViewById(R.id.level_selection_button_easy);
         btnMedium = findViewById(R.id.level_selection_button_medium);
@@ -48,18 +47,10 @@ public class LevelSelectionActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
 
 
-        changeButtonColors(1);
-        changeDisplayedLevels(1);
+        changeButtonColors(2);
+        changeDisplayedLevels(2);
 
         btnEasy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                changeButtonColors(0);
-                changeDisplayedLevels(0);
-            }
-        });
-
-        btnMedium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 changeButtonColors(1);
@@ -67,11 +58,19 @@ public class LevelSelectionActivity extends AppCompatActivity {
             }
         });
 
-        btnHard.setOnClickListener(new View.OnClickListener() {
+        btnMedium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 changeButtonColors(2);
                 changeDisplayedLevels(2);
+            }
+        });
+
+        btnHard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeButtonColors(3);
+                changeDisplayedLevels(3);
             }
         });
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(this,
@@ -84,10 +83,7 @@ public class LevelSelectionActivity extends AppCompatActivity {
                 intent.putExtra("levelId", gameList.get(position).getGame_level());
                 intent.putExtra("levelName", getString(R.string.item_level_selection_text_level) + " " + (position+1));
                 ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(LevelSelectionActivity.this, (View) recyclerView, "levelName");
-                //startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
                 startActivity(intent, optionsCompat.toBundle());
-
-                Log.d("TEST", "short");
             }
 
             @Override
@@ -98,6 +94,13 @@ public class LevelSelectionActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        changeDisplayedLevels(btnState);
+    }
+
+    //clear user progress in selected level
     private void clearLevelProgress(int position) {
         db.getWritableDatabase();
         GameLevel gameLevel = db.getGameLevelByLevel(gameList.get(position).getGame_level());
@@ -109,19 +112,18 @@ public class LevelSelectionActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),
                 "Level cleared",
                 Toast.LENGTH_SHORT).show();
-        Log.d("TEST", "long");
     }
 
-
+    //changes button colors when button is pressed
     void changeButtonColors(int btnNumber){
         switch(btnState){
-            case 0:
+            case 1:
                 btnEasy.setBackground(getDrawable(R.drawable.button_level_selection_left_form));
                 break;
-            case 1:
+            case 2:
                 btnMedium.setBackground(getDrawable(R.drawable.button_level_selection_middle_form));
                 break;
-            case 2:
+            case 3:
                 btnHard.setBackground(getDrawable(R.drawable.button_level_selection_right_form));
                 break;
         }
@@ -129,18 +131,19 @@ public class LevelSelectionActivity extends AppCompatActivity {
         btnState = btnNumber;
 
         switch(btnState){
-            case 0:
+            case 1:
                 btnEasy.setBackground(getDrawable(R.drawable.button_level_selection_left_selected_form));
                 break;
-            case 1:
+            case 2:
                 btnMedium.setBackground(getDrawable(R.drawable.button_level_selection_middle_selected_form));
                 break;
-            case 2:
+            case 3:
                 btnHard.setBackground(getDrawable(R.drawable.button_level_selection_right_selected_form));
                 break;
         }
     }
 
+    //loads level of chosen difficulty
     void changeDisplayedLevels(int btnNumber){
 
         gameList.clear();

@@ -18,4 +18,6 @@
     <string name="menu_end_game_text_time">minutes</string>
     <string name="item_level_selection_text_level">Level </string>
 
+
+    <string name="preferences_db_ver">db_version</string>
 </resources>
