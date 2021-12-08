@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Sudoku</string>
 
+    <string name="menu_version">ver. 0.6a</string>
+
     <string name="menu_main_start_button">Start game</string>
     <string name="menu_main_settings_button">Settings</string>
     <string name="item_level_selection_text_start">Start</string>
@@ -17,6 +19,8 @@
     <string name="menu_end_game_text_in">in just</string>
     <string name="menu_end_game_text_time">minutes</string>
     <string name="item_level_selection_text_level">Level </string>
+
+    <string name="game_button_pencil">Pencil</string>
 
 
     <string name="preferences_db_ver">db_version</string>

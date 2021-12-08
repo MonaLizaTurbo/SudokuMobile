@@ -5,6 +5,8 @@ import androidx.core.app.ActivityOptionsCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,6 +25,7 @@ public class GameActivity extends AppCompatActivity {
     GameLevel gameLevel = new GameLevel();
     Long timeStamp;
     TextView levelName;
+    Button btnSmallFont;
 
     //list of buttons which insert values into the grid
     public static final int[] INSERT_BUTTONS_IDS = {
@@ -147,6 +150,8 @@ public class GameActivity extends AppCompatActivity {
     int choosenSquare = new Integer(0);
     int choosenButton = new Integer(0);
 
+    boolean smallFlag = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -172,7 +177,22 @@ public class GameActivity extends AppCompatActivity {
         solvedLevel = writeFromStringToArray(gameLevel.getGame_solution());
         playerBoard = writeFromStringToArray(gameLevel.getPlayer_level());
 
+        btnSmallFont = findViewById(R.id.game_button_small);
+
         btn0 = findViewById(R.id.button_0);
+
+        btnSmallFont.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                smallFlag = !smallFlag;
+                if(smallFlag){
+                    btnSmallFont.setBackground(getResources().getDrawable(R.drawable.button_level_small_font_pressed_form));
+                }
+                else {
+                    btnSmallFont.setBackground(getResources().getDrawable(R.drawable.button_level_small_font_form));
+                }
+            }
+        });
 
         // initialize of buttons
         int buttonIterator = 1;
@@ -192,14 +212,22 @@ public class GameActivity extends AppCompatActivity {
             btnInsertList.add(button);
         }
 
-        // initialize of buttons
+        // initialize of game board buttons
         buttonIterator = 0;
         int row = 0;
         int column = 0;
         ArrayList<Button> helpButtonArrayList = new ArrayList<>();
         for (int id : BUTTON_IDS) {
             Button button = findViewById(id);
-            button.setTextSize(1,25);
+            button.setText(playerBoard[row][column]);
+            if(playerBoard[row][column].length() == 3){
+                button.setTextSize(1,15);
+                button.setWidth(60);
+                button.setHeight(60);
+            }
+            else {
+                button.setTextSize(1,25);
+            }
             button.setText(playerBoard[row][column]);
             if (gameboard[row][column].matches("")) {
                 button.setBackground(getResources().getDrawable(R.drawable.button_board_form));
@@ -259,27 +287,36 @@ public class GameActivity extends AppCompatActivity {
 
     //function that inserts value in to the grid
     private void insertValue(int value){
-        String test = "";
-        for (int row = 0; row < 9; row++) {
-            for (int column = 0; column < 9; column++) {
-                if(gameboard[row][column].matches("")){
-                    test+=" ";
-                }
-                else
-                    test+=gameboard[row][column];
-             }
-            test+="\n";
-            }
-
         int placeIterator = 0;
         for (int row = 0; row < 9; row++) {
             for (int column = 0; column < 9; column++) {
                 if (choosenSquare == placeIterator && gameboard[row][column].matches("")) {
+                    if(smallFlag){
+                        btnBoardList.get(row).get(column).setTextSize(TypedValue.COMPLEX_UNIT_DIP, 15);
+                        String text = (String) btnBoardList.get(row).get(column).getText();
+                        if(text.matches("") || text.length() == 1 ){
+                            btnBoardList.get(row).get(column).setText(" " + value + " ");
+                            playerBoard[row][column] = " " + value + " ";
+                        }
+                        else if(text.length() == 3 && text.charAt(0) == ' '){
+                            btnBoardList.get(row).get(column).setText(text.substring(1,2) + " " + value);
+                            playerBoard[row][column] = text.substring(1,2) + " " + value;
+                        }
+                        else{
+                            text = text.substring(2);
+                            btnBoardList.get(row).get(column).setText(text + " " + value);
+                            playerBoard[row][column] = String.valueOf(value);
+                        }
+                    }
+                    else {
+                        btnBoardList.get(row).get(column).setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25);
                         btnBoardList.get(row).get(column).setText(String.valueOf(value));
                         playerBoard[row][column] = String.valueOf(value);
-                        row = 9;
-                        column = 9;
                     }
+
+                    row = 9;
+                    column = 9;
+                }
 
                 placeIterator++;
             }
@@ -479,6 +516,9 @@ public class GameActivity extends AppCompatActivity {
                 if(gameLevel[row][column].matches("")){
                     level += " ";
                 }
+                else if(gameLevel[row][column].length() == 3){
+                    level += "\"" + gameLevel[row][column] + "\"";
+                }
                 else {
                     level += gameLevel[row][column];
                 }
@@ -497,6 +537,10 @@ public class GameActivity extends AppCompatActivity {
                 switch (level.charAt(levelIterator)) {
                     case ' ':
                         levelArray[row][column] = "";
+                        break;
+                    case '\"':
+                        levelArray[row][column] = level.substring(levelIterator + 1, levelIterator + 4);
+                        levelIterator += 4;
                         break;
                     default :
                         levelArray[row][column] = String.valueOf(level.charAt(levelIterator));
