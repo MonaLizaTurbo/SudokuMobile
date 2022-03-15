@@ -2,7 +2,8 @@
 
 Simple sudoku mobile app. 
 
-![](https://github.com/MonaLizaTurbo/SudokuMobile/blob/master/readme-images/sudokuMobile1.png)
+![](https://github.com/MonaLizaTurbo/SudokuMobile/blob/master/readme_pictures/sudokuMobile.png)
+![](https://github.com/MonaLizaTurbo/SudokuMobile/blob/master/readme_pictures/sudokuMobile3.png)
 
 It automatically downloads levels from Firebase Realtime Database. After opening, it checks if the
 phone has current version of database by comparing internal database version number with this which is
@@ -37,14 +38,14 @@ stored in JSON file which looks like this:
 The puzzles are sorted by their level of difficulty. If you started playing any puzzle, it will have a ``continue``
 label. You can reset level by holding it for a while.
 
-![](https://github.com/MonaLizaTurbo/SudokuMobile/blob/master/readme-images/sudokuMobile2.png)
+![](https://github.com/MonaLizaTurbo/SudokuMobile/blob/master/readme_pictures/sudokuMobile2.png)
 
 In game you have board and a set of buttons for inserting values. ``pencil`` button allow you to insert
 up to two smaller numbers to help you solve the puzzle.
 
-![](https://github.com/MonaLizaTurbo/SudokuMobile/blob/master/readme-images/sudokuMobile3.png)
-![](https://github.com/MonaLizaTurbo/SudokuMobile/blob/master/readme-images/sudokuMobile4.png)
+![](https://github.com/MonaLizaTurbo/SudokuMobile/blob/master/readme_pictures/sudokuMobile3.png)
+![](https://github.com/MonaLizaTurbo/SudokuMobile/blob/master/readme_pictures/sudokuMobile4.png)
 
 After completing the puzzle, you'll be greeted with a screen telling you how long it took.
 
-![](https://github.com/MonaLizaTurbo/SudokuMobile/blob/master/readme-images/sudokuMobile5.png)
+![](https://github.com/MonaLizaTurbo/SudokuMobile/blob/master/readme_pictures/sudokuMobile5.png)
